@@ -1,0 +1,13 @@
+src/
+__tests__/
+*.test.ts
+*.test.tsx
+jest.config.js
+jest.setup.ts
+tsconfig.json
+tsconfig.test.json
+.eslintrc.js
+.gitignore
+.git/
+node_modules/
+coverage/
