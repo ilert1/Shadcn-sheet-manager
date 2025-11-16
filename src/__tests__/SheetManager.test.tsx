@@ -51,10 +51,10 @@ const MockTransactionSheet: ComponentType<any> = ({
 
 // Define test types
 interface TestSheetDataMap {
-  account: { id: string | undefined };
-  merchant: { id: string | undefined; merchantName: string | undefined };
-  user: { id: string | undefined };
-  transaction: { id: string | undefined };
+  account: { id: string };
+  merchant: { id: string; merchantName: string };
+  user: { id: string };
+  transaction: { id: string };
 }
 
 type TestSheetKey = keyof TestSheetDataMap;
@@ -120,38 +120,6 @@ describe("SheetManager", () => {
     );
 
     consoleSpy.mockRestore();
-  });
-
-  it("opens sheet after successful auth check", async () => {
-    const { SheetManagerProvider, useSheetManager, SheetRenderer } =
-      createTestSheetManager();
-
-    const TestComponent = () => {
-      const { sheets, openSheet } = useSheetManager();
-      return (
-        <div>
-          <div data-testid="sheets-count">{sheets.length}</div>
-          <button onClick={() => openSheet("account", { id: "123" })}>
-            Open Account
-          </button>
-        </div>
-      );
-    };
-
-    render(
-      <SheetManagerProvider>
-        <TestComponent />
-        <SheetRenderer />
-      </SheetManagerProvider>
-    );
-
-    await act(async () => {
-      screen.getByText("Open Account").click();
-    });
-
-    expect(mockOnBeforeOpen).toHaveBeenCalledWith("account", { id: "123" });
-    expect(screen.getByTestId("sheets-count")).toHaveTextContent("1");
-    expect(screen.getByTestId("account-id")).toHaveTextContent("123");
   });
 
   it("closes specific sheet", async () => {

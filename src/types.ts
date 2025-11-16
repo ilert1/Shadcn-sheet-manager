@@ -5,6 +5,11 @@ export interface BaseSheetProps {
   onOpenChange: (open: boolean) => void;
 }
 
+// Helper type to make all properties optional and nullable
+export type SheetData<T = Record<string, any>> = {
+  [K in keyof T]?: T[K] | undefined;
+};
+
 export interface SheetState<
   TKey extends string,
   TDataMap extends Record<TKey, any>
