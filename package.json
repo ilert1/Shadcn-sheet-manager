@@ -28,7 +28,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ilert1/ilert1/Shadcn-sheet-manager"
+    "url": "https://github.com/ilert1/Shadcn-sheet-manager"
   },
   "peerDependencies": {
     "react": "^18.0.0",
