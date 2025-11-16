@@ -449,7 +449,7 @@ MIT © [Your Name]
 
 ## 🐛 Issues
 
-Found a bug? Please [file an issue](https://github.com/ilert1/react-sheet-manager/issues).
+Found a bug? Please [file an issue](https://github.com/ilert1/Shadcn-sheet-manager/issues).
 
 ## ⭐ Support
 
